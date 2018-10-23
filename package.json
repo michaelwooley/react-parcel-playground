@@ -1,7 +1,7 @@
 {
-  "name": "yapij-react",
+  "name": "react-parcel-playground",
   "version": "1.0.0",
-  "description": "React components for yapij library.",
+  "description": "Minimal boilerplate react component library + code playground using parcel and component-playground.",
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
@@ -9,8 +9,8 @@
     "build": "parcel build src/index.js -d dist/prod"
   },
   "keywords": [
-    "survey",
-    "grant-thornton"
+    "playground",
+    "library"
   ],
   "author": "Michael Wooley",
   "license": "UNLICENSED",

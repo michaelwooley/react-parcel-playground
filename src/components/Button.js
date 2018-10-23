@@ -1,5 +1,3 @@
-/* eslint new-cap:0 no-unused-vars:0 */
-"use strict";
 import React from "react";
 import PropTypes from "prop-types";
 

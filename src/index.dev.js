@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Playground from "component-playground";
+
+import { PlaygroundContainer, Swing } from "./playgroundComponents";
 
 import Button from "./components/Button.js";
 import DebugInfo from "./components/DebugInfo.js";
@@ -12,42 +13,41 @@ import "./styles/playground.scss";
 import "./styles/syntax.scss";
 
 const Index = () => (
-  <div className="component-documentation">
-    <h2>Default</h2>
-
-    <Playground
+  <PlaygroundContainer
+    id="example"
+    title="An Example Library"
+    datePlacement="top"
+  >
+    <Swing
+      title="Default"
       codeText={componentExample}
       scope={{ React: React, Button: Button }}
     />
 
-    <h2>Collapsable Code</h2>
-
-    <Playground
+    <Swing
+      title="Collapsable"
       codeText={componentExample}
       scope={{ React: React, Button: Button }}
       collapsableCode
     />
 
-    <h2>Collapsable Code (Expanded by Default)</h2>
-
-    <Playground
+    <Swing
+      title="Collapsable Code (Expanded by Default)"
       codeText={componentExample}
       scope={{ React: React, Button: Button }}
       collapsableCode
       initiallyExpanded
     />
 
-    <h2>Code Selection Highlighting</h2>
-
-    <Playground
+    <Swing
+      title="Code Selection Highlighting"
       codeText={componentExample}
       scope={{ React: React, Button: Button }}
       selectedLines={[2, 3, 4, 9]}
     />
 
-    <h2>Prop Descriptions</h2>
-
-    <Playground
+    <Swing
+      title="Prop Descriptions"
       codeText={componentExample}
       scope={{ React: React, Button: Button }}
       propDescriptionMap={{
@@ -57,22 +57,20 @@ const Index = () => (
       collapsableCode
     />
 
-    <h2>With Context</h2>
-
-    <Playground
+    <Swing
+      title="With Context"
       context={{ environment: "staging" }}
       codeText={contextExample}
       scope={{ React: React, DebugInfo: DebugInfo }}
     />
 
-    <h2>ES6 Console</h2>
-
-    <Playground
+    <Swing
+      title="ES6 Console"
       codeText={es6Example}
       es6Console
       scope={{ React: React, Button: Button }}
     />
-  </div>
+  </PlaygroundContainer>
 );
 
 ReactDOM.render(<Index />, document.getElementById("root"));
